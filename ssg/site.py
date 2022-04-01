@@ -23,11 +23,10 @@ class Site():
         else:
             print("Not Implemented")
 
-
-def build(self):
-    self.dest.mkdir(parents=True, exist_ok=True)
-    for path in self.source.rglob("*"):
-        if path.is_dir():
-            self.create_dir(path)
-        elif path.is_file():
-            self.run_parser(path)
+    def build(self):
+        self.dest.mkdir(parents=True, exist_ok=True)
+        for path in self.source.rglob("*"):
+            if path.is_dir():
+                self.create_dir(path)
+            elif path.is_file():
+                self.run_parser(path)
