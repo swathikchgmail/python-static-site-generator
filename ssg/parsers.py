@@ -1,5 +1,5 @@
 import shutil
-from typing import List
+from typing import List, TextIO
 from pathlib import Path
 
 
@@ -13,7 +13,7 @@ class Parser:
         raise NotImplementedError
 
     def read(self, path):
-        with open(path, "r") as file
+        with open(path, "r") as file:
             return file.read()
 
     def write(self, path, dest, content, ext=".html"):
@@ -23,6 +23,7 @@ class Parser:
 
     def copy(self, path, source, dest):
         shutil.copy2(path, dest / path.relative_to(source))
+
 
 class ResourceParser(Parser):
     extensions = [".jpg", ".png", ".gif", ".css", ".html"]

@@ -20,8 +20,8 @@ class Site():
         parser = self.load_parser(path.suffix)
         if parser is not None:
             parser.parse(path, self.source, self.dest)
-        else ;
-        print("Not Implemented")
+        else:
+            print("Not Implemented")
 
 
 def build(self):
